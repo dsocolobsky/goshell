@@ -33,6 +33,12 @@ func cat(f *os.File) {
 
 func main() {
 	args := os.Args
+
+	if len(args) == 1 {
+		fmt.Println("You must provide an argument")
+		return
+	}
+
 	file, err := os.Open(args[1])
 
 	// If there is an error opening the file
